@@ -1,0 +1,23 @@
+<gui-grid [columns]="columns"
+		  [source]="source">
+</gui-grid>
+
+<h3 *ngIf="selectedCharacter else name">{{selectedCharacter.name}}</h3>
+
+<mat-form-field>
+	<mat-label>Select position</mat-label>
+	<mat-select (selectionChange)="onPositionSelection($event)">
+		<mat-option *ngFor="let position of positions"
+					[value]="position">
+			{{position}}
+		</mat-option>
+	</mat-select>
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="addCharacter(selectedPosition, selectedCharacter)">
+	Add
+</button>
+
+<ng-template #name>
+	<h3>Name</h3>
+</ng-template>
