@@ -40,7 +40,6 @@ export class FcGridComponent implements OnInit {
 
 	onItemSelected(character: Array<FantasyCrewCharacter>): void {
 		this.onCharacterSelection.emit(character[0]);
-
 	}
 
 }

@@ -62,8 +62,6 @@ export class FantasyCrewGridComponent implements OnInit {
 
 	addCharacter(position: string, character: FantasyCrewCharacter): void {
 
-		// this.isCharacterPicked(character);
-
 		if (position && character) {
 
 			this.store.dispatch(new CharacterActions
@@ -75,24 +73,5 @@ export class FantasyCrewGridComponent implements OnInit {
 				}));
 		}
 	}
-
-	isCharacterPicked(character: FantasyCrewCharacter) {
-
-		// for (let i = 0; i < this.columns.length; i++) {
-		// 	if (this.columns[1].header[1]) {
-		this.fantasyCrew.subscribe((characters) => {
-
-			for (let i = 0; i < characters.length; i++) {
-				if (characters[i].name === character.name) {
-					console.log(characters[i].name);
-				}
-			}
-
-		});
-
-	}
-
-	// }
-	// }
 
 }
