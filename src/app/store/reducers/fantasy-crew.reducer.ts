@@ -4,7 +4,7 @@ import { createEntityAdapter, EntityState } from '@ngrx/entity';
 import { FantasyCrewData } from '../../data/fantasy-crew.data';
 import { FantasyCrewCharacter } from '../models/fantasy-crew-character.model';
 
-import * as CharacterActions from '../actions/fantasy-crew.actions';
+import * as crewActions from '../actions/fantasy-crew.actions';
 
 
 export const characterAdapter = createEntityAdapter<FantasyCrewCharacter>();
@@ -16,7 +16,7 @@ export const initialState: State = characterAdapter.getInitialState(FantasyCrewD
 
 export function reducer(
 	state: State = initialState,
-	action: CharacterActions.Actions) {
+	action: crewActions.Actions) {
 
 	return characterAdapter.updateOne({
 		id: action.id,

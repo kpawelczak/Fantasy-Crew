@@ -9,6 +9,8 @@ import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/reducers/fantasy-crew.reducer';
 import { FantasyCrewGridModule } from './fantasy-crew-grid/fantasy-crew-grid.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EffectsModule } from '@ngrx/effects';
+import { FantasyCrewEffects } from './store/effects/fantasy-crew.effect';
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		BrowserAnimationsModule,
 		FcGridModule,
 		FantasyCrewGridModule,
+		EffectsModule.forRoot([FantasyCrewEffects]),
 		StoreModule.forRoot({
 			character: reducer
 		})
