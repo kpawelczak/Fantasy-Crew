@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { of } from 'rxjs';
 
 import * as crewActions from '../actions/fantasy-crew.actions';
-import { concatMap, tap, withLatestFrom } from 'rxjs/operators';
+import { concatMap, map, withLatestFrom } from 'rxjs/operators';
 import { select, Store } from '@ngrx/store';
 import * as reducer from '../reducers/fantasy-crew.reducer';
+import { of } from 'rxjs';
 
 
 @Injectable()
@@ -15,19 +15,20 @@ export class FantasyCrewEffects {
 				private store: Store<reducer.State>) {
 	}
 
-	AddCharacter = createEffect(
+	AddCharacter$ = createEffect(
 		() =>
 			this.actions.pipe(
 				ofType(crewActions.ADD_CHARACTER),
 				concatMap(action => of(action).pipe(
-					withLatestFrom(this.store.pipe(select(reducer.initialState)))
+					withLatestFrom(this.store.pipe(select(reducer.selectAll)))
 				)),
-				tap(([action, crew]) => {
-					if (crew.length === 1) {
-						window.alert('x');
-					} else {
-						window.alert('y' + crew.length);
-					}
+
+				map(([action, crew]) => {
+
+					let x = action.changes.name;
+					// let y = x
+					console.log(x, crew[1].name);
+
 				})
 			),
 		{ dispatch: false }

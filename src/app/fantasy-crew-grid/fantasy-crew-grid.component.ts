@@ -7,7 +7,6 @@ import * as reducer from '../store/reducers/fantasy-crew.reducer';
 import * as CharacterActions from '../store/actions/fantasy-crew.actions';
 import { POSITION } from '../data/fantasy-crew-rank';
 
-
 @Component({
 	selector: 'fantasy-crew-grid',
 	templateUrl: './fantasy-crew-grid.component.html',
@@ -54,11 +53,13 @@ export class FantasyCrewGridComponent implements OnInit {
 			.subscribe((characters: any) => {
 				this.source = characters;
 			});
+
 	}
 
 	onPositionSelection(position: any): void {
 		this.selectedPosition = position.value;
 	}
+
 
 	addCharacter(position: string, character: FantasyCrewCharacter): void {
 
