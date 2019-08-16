@@ -5,7 +5,7 @@ export const FantasyCrewRoster: FantasyCrewCharacter[] = [
 	{
 		name: 'Q the Ordinary',
 		rank: 'Civilian',
-		position: '',
+		position: POSITION.Morale,
 		species: 'Q',
 		score: 1
 	}, {

@@ -1,4 +1,4 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { createFeatureSelector } from '@ngrx/store';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
 import { FantasyCrewData } from '../../data/fantasy-crew.data';
@@ -19,10 +19,10 @@ export function reducer(
 	state: State = initialState,
 	action: crewActions.Actions) {
 
-	return characterAdapter.updateOne({
-		id: action.id,
-		changes: action.changes
-	}, state);
+			return characterAdapter.updateOne({
+				id: action.id,
+				changes: action.changes
+			}, state);
 
 }
 

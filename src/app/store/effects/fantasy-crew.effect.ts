@@ -2,35 +2,49 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import * as crewActions from '../actions/fantasy-crew.actions';
-import { concatMap, map, withLatestFrom } from 'rxjs/operators';
+import { concatMap, tap, withLatestFrom } from 'rxjs/operators';
 import { select, Store } from '@ngrx/store';
 import * as reducer from '../reducers/fantasy-crew.reducer';
 import { of } from 'rxjs';
+import { SelectedService } from '../../grid/selected';
 
 
 @Injectable()
 export class FantasyCrewEffects {
 
 	constructor(private actions: Actions,
-				private store: Store<reducer.State>) {
+				private store: Store<reducer.State>,
+				private selected: SelectedService) {
 	}
 
-	AddCharacter$ = createEffect(
+	RemoveCharacter$ = createEffect(
 		() =>
 			this.actions.pipe(
 				ofType(crewActions.ADD_CHARACTER),
 				concatMap(action => of(action).pipe(
 					withLatestFrom(this.store.pipe(select(reducer.selectAll)))
 				)),
+				tap(([action, crew]) => {
 
-				map(([action, crew]) => {
+					this.selected.observeSelected().subscribe(selectedName => {
 
-					let x = action.changes.name;
-					// let y = x
-					console.log(x, crew[1].name);
+						for (let i = 0; i < crew.length; i++) {
 
+							if (crew[i].name !== '') {
+								if (crew[i].name === selectedName) {
+
+									crew[i].name = '';
+									crew[i].rank = '';
+									crew[i].species = '';
+									crew[i].score = null;
+								}
+							}
+						}
+					});
 				})
 			),
 		{ dispatch: false }
 	);
+
+
 }

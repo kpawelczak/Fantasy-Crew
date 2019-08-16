@@ -4,8 +4,9 @@ import { Observable } from 'rxjs';
 import { GuiColumn } from '@generic-ui/ngx-grid';
 import { FantasyCrewCharacter } from '../store/models/fantasy-crew-character.model';
 import * as reducer from '../store/reducers/fantasy-crew.reducer';
-import * as CharacterActions from '../store/actions/fantasy-crew.actions';
+import * as crewActions from '../store/actions/fantasy-crew.actions';
 import { POSITION } from '../data/fantasy-crew-rank';
+import { SelectedService } from '../grid/selected';
 
 @Component({
 	selector: 'fantasy-crew-grid',
@@ -37,14 +38,17 @@ export class FantasyCrewGridComponent implements OnInit {
 		}, {
 			header: 'Species',
 			field: 'species'
-		}, {
-			header: 'Score',
-			field: 'score'
-		}];
+		}
+		// , {
+		// 	header: 'Score',
+		// 	field: 'score'
+		// }
+	];
 
 	source: Array<any> = [];
 
-	constructor(private store: Store<reducer.State>) {
+	constructor(private store: Store<reducer.State>,
+				private selectedService: SelectedService) {
 		this.fantasyCrew = this.store.select(reducer.selectAll);
 	}
 
@@ -60,18 +64,20 @@ export class FantasyCrewGridComponent implements OnInit {
 		this.selectedPosition = position.value;
 	}
 
-
 	addCharacter(position: string, character: FantasyCrewCharacter): void {
 
 		if (position && character) {
 
-			this.store.dispatch(new CharacterActions
+			this.selectedService.getSelected(character.name);
+
+			this.store.dispatch(new crewActions
 				.AddCharacter(position.toString(), {
 					name: character.name,
 					rank: character.rank,
 					species: character.species,
 					score: character.score
 				}));
+
 		}
 	}
 

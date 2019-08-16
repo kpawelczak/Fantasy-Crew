@@ -7,6 +7,7 @@ import { FantasyCrewCharacter } from '../store/models/fantasy-crew-character.mod
 	selector: 'fc-grid',
 	templateUrl: './fc-grid.component.html',
 	styleUrls: ['./fc-grid.component.scss'],
+
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FcGridComponent implements OnInit {
@@ -26,11 +27,13 @@ export class FcGridComponent implements OnInit {
 	}, {
 		header: 'Species',
 		field: 'species'
-	}, {
-		header: 'Score',
-		field: 'score',
-		width: 50
-	}];
+	}
+		// , {
+		// 	header: 'Score',
+		// 	field: 'score',
+		// 	width: 50
+		// }
+	];
 
 	source: Array<any> = [];
 
@@ -38,7 +41,7 @@ export class FcGridComponent implements OnInit {
 		this.source = FantasyCrewRoster;
 	}
 
-	onItemSelected(character: Array<FantasyCrewCharacter>): void {
+	onItemSelected(character: Array<FantasyCrewCharacter>) {
 		this.onCharacterSelection.emit(character[0]);
 	}
 

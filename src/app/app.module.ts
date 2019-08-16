@@ -11,6 +11,7 @@ import { FantasyCrewGridModule } from './fantasy-crew-grid/fantasy-crew-grid.mod
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EffectsModule } from '@ngrx/effects';
 import { FantasyCrewEffects } from './store/effects/fantasy-crew.effect';
+import { SelectedService } from './grid/selected';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { FantasyCrewEffects } from './store/effects/fantasy-crew.effect';
 	declarations: [
 		AppComponent
 	],
-	providers: [],
+	providers: [SelectedService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {
