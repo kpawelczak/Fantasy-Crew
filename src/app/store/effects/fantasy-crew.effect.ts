@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
 
-import * as crewActions from '../actions/fantasy-crew.actions';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { concatMap, tap, withLatestFrom } from 'rxjs/operators';
 import { select, Store } from '@ngrx/store';
-import * as reducer from '../reducers/fantasy-crew.reducer';
 import { of } from 'rxjs';
-import { SelectedService } from '../../grid/selected';
+
+import { SelectedService } from '../../fantasy-crew-grid/selected';
+
+import * as crewActions from '../actions/fantasy-crew.actions';
+import * as reducer from '../reducers/fantasy-crew.reducer';
 
 
 @Injectable()
@@ -26,12 +28,12 @@ export class FantasyCrewEffects {
 				)),
 				tap(([action, crew]) => {
 
-					this.selected.observeSelected().subscribe(selectedName => {
+					this.selected.observeSelected().subscribe(selected => {
 
 						for (let i = 0; i < crew.length; i++) {
 
 							if (crew[i].name !== '') {
-								if (crew[i].name === selectedName) {
+								if (crew[i].name === selected.name) {
 
 									crew[i].name = '';
 									crew[i].rank = '';
@@ -45,6 +47,5 @@ export class FantasyCrewEffects {
 			),
 		{ dispatch: false }
 	);
-
 
 }

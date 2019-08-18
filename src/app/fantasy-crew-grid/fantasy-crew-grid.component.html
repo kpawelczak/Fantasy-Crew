@@ -1,23 +1,30 @@
 <gui-grid [columns]="columns"
+		  [rowColoring]="rowColoring"
+		  [theme]="theme"
 		  [source]="source">
 </gui-grid>
 
-<h3 *ngIf="selectedCharacter else name">{{selectedCharacter.name}}</h3>
+<section>
 
-<mat-form-field>
-	<mat-label>Select position</mat-label>
-	<mat-select (selectionChange)="onPositionSelection($event)">
-		<mat-option *ngFor="let position of positions"
-					[value]="position">
-			{{position}}
-		</mat-option>
-	</mat-select>
-</mat-form-field>
+	<h4 *ngIf="selectedCharacter else name">{{selectedCharacter.name}}</h4>
 
-<button mat-raised-button color="primary" (click)="addCharacter(selectedPosition, selectedCharacter)">
-	Add
-</button>
+	<mat-form-field>
+		<mat-label>Select position</mat-label>
+		<mat-select (selectionChange)="onPositionSelection($event)">
+			<mat-option *ngFor="let position of positions"
+						[value]="position">
+				{{position}}
+			</mat-option>
+		</mat-select>
+	</mat-form-field>
+
+	<button mat-raised-button color="primary"
+			(click)="addCharacter(selectedPosition, selectedCharacter)">
+		Add
+	</button>
+
+</section>
 
 <ng-template #name>
-	<h3>Name</h3>
+	<h4>Choose one of the characters below and select position you wish to fill</h4>
 </ng-template>

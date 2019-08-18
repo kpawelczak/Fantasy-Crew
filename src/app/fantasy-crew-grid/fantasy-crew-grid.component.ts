@@ -1,12 +1,16 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+
+import { GuiColumn, GuiRowColoring, GuiTheme } from '@generic-ui/ngx-grid';
+
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { GuiColumn } from '@generic-ui/ngx-grid';
+
 import { FantasyCrewCharacter } from '../store/models/fantasy-crew-character.model';
+import { POSITION } from '../data/fantasy-crew-rank';
+import { SelectedService } from './selected';
+
 import * as reducer from '../store/reducers/fantasy-crew.reducer';
 import * as crewActions from '../store/actions/fantasy-crew.actions';
-import { POSITION } from '../data/fantasy-crew-rank';
-import { SelectedService } from '../grid/selected';
 
 @Component({
 	selector: 'fantasy-crew-grid',
@@ -47,6 +51,10 @@ export class FantasyCrewGridComponent implements OnInit {
 
 	source: Array<any> = [];
 
+	rowColoring: GuiRowColoring = GuiRowColoring.NONE;
+
+	theme: GuiTheme = GuiTheme.MATERIAL;
+
 	constructor(private store: Store<reducer.State>,
 				private selectedService: SelectedService) {
 		this.fantasyCrew = this.store.select(reducer.selectAll);
@@ -68,7 +76,7 @@ export class FantasyCrewGridComponent implements OnInit {
 
 		if (position && character) {
 
-			this.selectedService.getSelected(character.name);
+			this.selectedService.getSelected(character);
 
 			this.store.dispatch(new crewActions
 				.AddCharacter(position.toString(), {
