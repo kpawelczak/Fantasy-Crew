@@ -125,7 +125,7 @@ export const FantasyCrewRoster: FantasyCrewCharacter[] = [
 	}, {
 		name: 'Data',
 		rank: 'Lt. Commander',
-		position: `${POSITION.Science}, ${POSITION.First}, ${POSITION.Engineering}, ${POSITION.Helmsman}`,
+		position: `${POSITION.Science}, ${POSITION.First}, ${POSITION.Engineering}`,
 		species: 'Android',
 		score: 9.5
 	}, {

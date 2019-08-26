@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { GuiColumn, GuiRowColoring, GuiTheme } from '@generic-ui/ngx-grid';
+import { GuiColumn, GuiPagingConfig, GuiRowColoring, GuiTheme } from '@generic-ui/ngx-grid';
 import { FantasyCrewRoster } from '../data/database';
 import { FantasyCrewCharacter } from '../store/models/fantasy-crew-character.model';
 
@@ -40,6 +40,11 @@ export class FcGridComponent implements OnInit {
 	rowColoring: GuiRowColoring = GuiRowColoring.NONE;
 
 	theme: GuiTheme = GuiTheme.MATERIAL;
+
+	paging: GuiPagingConfig = {
+		enabled: true,
+		pageSizes: [25, 50]
+	};
 
 	ngOnInit() {
 		this.source = FantasyCrewRoster;

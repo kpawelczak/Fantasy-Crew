@@ -22,7 +22,7 @@
     "@angular/platform-browser": "^7.0.0",
     "@angular/platform-browser-dynamic": "^7.0.0",
     "@angular/router": "^7.0.0",
-    "@generic-ui/ngx-grid": "^0.0.1-alpha.7",
+    "@generic-ui/ngx-grid": "^0.0.1-alpha.9",
     "@ngrx/effects": "^8.2.0",
     "@ngrx/entity": "^8.2.0",
     "@ngrx/store": "^8.2.0",
