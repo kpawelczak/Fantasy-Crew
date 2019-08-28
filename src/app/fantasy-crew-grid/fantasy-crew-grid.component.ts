@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 
 import { FantasyCrewCharacter } from '../store/models/fantasy-crew-character.model';
 import { POSITION } from '../data/fantasy-crew-rank';
-import { SelectedService } from './selected';
 
 import * as reducer from '../store/reducers/fantasy-crew.reducer';
 import * as crewActions from '../store/actions/fantasy-crew.actions';
@@ -29,6 +28,8 @@ export class FantasyCrewGridComponent implements OnInit {
 
 	selectedPosition: string;
 
+	selectedFantasyCharacter;
+
 	columns: Array<GuiColumn> = [
 		{
 			header: 'Position',
@@ -42,12 +43,7 @@ export class FantasyCrewGridComponent implements OnInit {
 		}, {
 			header: 'Species',
 			field: 'species'
-		}
-		// , {
-		// 	header: 'Score',
-		// 	field: 'score'
-		// }
-	];
+		}];
 
 	source: Array<any> = [];
 
@@ -55,8 +51,7 @@ export class FantasyCrewGridComponent implements OnInit {
 
 	theme: GuiTheme = GuiTheme.MATERIAL;
 
-	constructor(private store: Store<reducer.State>,
-				private selectedService: SelectedService) {
+	constructor(private store: Store<reducer.State>) {
 		this.fantasyCrew = this.store.select(reducer.selectAll);
 	}
 
@@ -65,7 +60,6 @@ export class FantasyCrewGridComponent implements OnInit {
 			.subscribe((characters: any) => {
 				this.source = characters;
 			});
-
 	}
 
 	onPositionSelection(position: any): void {
@@ -76,7 +70,7 @@ export class FantasyCrewGridComponent implements OnInit {
 
 		if (position && character) {
 
-			this.selectedService.getSelected(character);
+			this.validateCharacter(character);
 
 			this.store.dispatch(new crewActions
 				.AddCharacter(position.toString(), {
@@ -89,4 +83,35 @@ export class FantasyCrewGridComponent implements OnInit {
 		}
 	}
 
+	removeCharacter(character: any): void {
+		if (this.selectedFantasyCharacter) {
+			this.store.dispatch(new crewActions
+				.RemoveCharacter(character.id, {}));
+			this.selectedFantasyCharacter = '';
+		}
+	}
+
+	private validateCharacter(character: FantasyCrewCharacter): void {
+		for (let i = 0; i < this.source.length; i++) {
+
+			if (this.source[i].name !== '') {
+				if (this.source[i].name === character.name) {
+					this.source[i].name = '';
+					this.source[i].rank = '';
+					this.source[i].species = '';
+					this.source[i].score = null;
+				}
+			}
+		}
+	}
+
+	private onItemSelected(character: Array<FantasyCrewCharacter>) {
+		this.selectedFantasyCharacter = character[0];
+	}
+
+	private isCharacterSelected() {
+		if (this.selectedCharacter) {
+			return this.selectedCharacter.name;
+		}
+	}
 }

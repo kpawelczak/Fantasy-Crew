@@ -1,12 +1,13 @@
 <gui-grid [columns]="columns"
 		  [rowColoring]="rowColoring"
 		  [theme]="theme"
-		  [source]="source">
+		  [source]="source"
+		  (itemsSelected)="onItemSelected($event)">
 </gui-grid>
 
 <section>
 
-	<h4 *ngIf="selectedCharacter else name">{{selectedCharacter.name}}</h4>
+	<h4 *ngIf="selectedCharacter else name">{{isCharacterSelected()}}</h4>
 
 	<mat-form-field>
 		<mat-label>Select position</mat-label>
@@ -21,6 +22,11 @@
 	<button mat-raised-button color="primary"
 			(click)="addCharacter(selectedPosition, selectedCharacter)">
 		Add
+	</button>
+
+	<button mat-raised-button color="warn" [disabled]="!selectedFantasyCharacter"
+			(click)="removeCharacter(selectedFantasyCharacter)">
+		Remove
 	</button>
 
 </section>

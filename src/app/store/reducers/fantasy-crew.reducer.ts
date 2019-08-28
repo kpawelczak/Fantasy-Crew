@@ -6,6 +6,7 @@ import { FantasyCrewCharacter } from '../models/fantasy-crew-character.model';
 
 import * as crewActions from '../actions/fantasy-crew.actions';
 
+
 export interface State extends EntityState<FantasyCrewCharacter> {
 }
 
@@ -19,10 +20,30 @@ export function reducer(
 	state: State = initialState,
 	action: crewActions.Actions) {
 
+	switch (action.type) {
+
+		case crewActions.ADD_CHARACTER: {
 			return characterAdapter.updateOne({
 				id: action.id,
 				changes: action.changes
 			}, state);
+		}
+
+		case crewActions.REMOVE_CHARACTER: {
+			return characterAdapter.updateOne({
+				id: action.id,
+				changes: action.changes = {
+					name: '',
+					rank: '',
+					species: '',
+					score: null
+				}
+			}, state);
+		}
+
+		default:
+			return state;
+	}
 
 }
 

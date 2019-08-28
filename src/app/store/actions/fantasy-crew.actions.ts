@@ -3,6 +3,7 @@ import { FantasyCrewCharacter } from '../models/fantasy-crew-character.model';
 
 
 export const ADD_CHARACTER = '[CHARACTER] ADD_CHARACTER';
+export const REMOVE_CHARACTER = '[CHARACTER] REMOVE_CHARACTER';
 
 export class AddCharacter implements Action {
 	readonly type = ADD_CHARACTER;
@@ -12,4 +13,12 @@ export class AddCharacter implements Action {
 	}
 }
 
-export type Actions = AddCharacter
+export class RemoveCharacter implements Action {
+	readonly type = REMOVE_CHARACTER;
+
+	constructor(public id: string,
+				public changes: Partial<FantasyCrewCharacter>) {
+	}
+}
+
+export type Actions = AddCharacter | RemoveCharacter

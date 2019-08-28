@@ -1,18 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-
-import { FcGridModule } from './grid/fc-grid.module';
+import { AppHeader } from './header/header.component';
 
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/reducers/fantasy-crew.reducer';
+
 import { FantasyCrewGridModule } from './fantasy-crew-grid/fantasy-crew-grid.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EffectsModule } from '@ngrx/effects';
-import { FantasyCrewEffects } from './store/effects/fantasy-crew.effect';
-import { SelectedService } from './fantasy-crew-grid/selected';
-import { AppHeader } from './header/header.component';
+import { FcGridModule } from './grid/fc-grid.module';
 
 
 @NgModule({
@@ -21,7 +18,6 @@ import { AppHeader } from './header/header.component';
 		BrowserAnimationsModule,
 		FcGridModule,
 		FantasyCrewGridModule,
-		EffectsModule.forRoot([FantasyCrewEffects]),
 		StoreModule.forRoot({
 			character: reducer
 		})
@@ -30,7 +26,6 @@ import { AppHeader } from './header/header.component';
 		AppComponent,
 		AppHeader
 	],
-	providers: [SelectedService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {

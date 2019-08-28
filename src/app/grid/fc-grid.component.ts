@@ -27,13 +27,7 @@ export class FcGridComponent implements OnInit {
 	}, {
 		header: 'Species',
 		field: 'species'
-	}
-		// , {
-		// 	header: 'Score',
-		// 	field: 'score',
-		// 	width: 50
-		// }
-	];
+	}];
 
 	source: Array<any> = [];
 
