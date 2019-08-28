@@ -24,7 +24,7 @@
 		Add
 	</button>
 
-	<button mat-raised-button color="warn" [disabled]="!selectedFantasyCharacter"
+	<button mat-raised-button color="warn" [disabled]="isButtonDisabled()"
 			(click)="removeCharacter(selectedFantasyCharacter)">
 		Remove
 	</button>

@@ -105,13 +105,17 @@ export class FantasyCrewGridComponent implements OnInit {
 		}
 	}
 
-	private onItemSelected(character: Array<FantasyCrewCharacter>) {
+	private onItemSelected(character: Array<FantasyCrewCharacter>): void {
 		this.selectedFantasyCharacter = character[0];
 	}
 
-	private isCharacterSelected() {
+	private isCharacterSelected(): boolean {
 		if (this.selectedCharacter) {
 			return this.selectedCharacter.name;
 		}
+	}
+
+	private isButtonDisabled(): boolean {
+		return !this.selectedFantasyCharacter || this.selectedFantasyCharacter.name === '';
 	}
 }
