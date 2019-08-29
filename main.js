@@ -91,20 +91,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _grid_fc_grid_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./grid/fc-grid.module */ "./src/app/grid/fc-grid.module.ts");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var _store_reducers_fantasy_crew_reducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./store/reducers/fantasy-crew.reducer */ "./src/app/store/reducers/fantasy-crew.reducer.ts");
-/* harmony import */ var _fantasy_crew_grid_fantasy_crew_grid_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./fantasy-crew-grid/fantasy-crew-grid.module */ "./src/app/fantasy-crew-grid/fantasy-crew-grid.module.ts");
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var _store_effects_fantasy_crew_effect__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./store/effects/fantasy-crew.effect */ "./src/app/store/effects/fantasy-crew.effect.ts");
-/* harmony import */ var _fantasy_crew_grid_selected__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./fantasy-crew-grid/selected */ "./src/app/fantasy-crew-grid/selected.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
-
-
-
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _store_reducers_fantasy_crew_reducer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./store/reducers/fantasy-crew.reducer */ "./src/app/store/reducers/fantasy-crew.reducer.ts");
+/* harmony import */ var _fantasy_crew_grid_fantasy_crew_grid_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./fantasy-crew-grid/fantasy-crew-grid.module */ "./src/app/fantasy-crew-grid/fantasy-crew-grid.module.ts");
+/* harmony import */ var _grid_fc_grid_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./grid/fc-grid.module */ "./src/app/grid/fc-grid.module.ts");
 
 
 
@@ -119,23 +113,21 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"])({
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_8__["BrowserAnimationsModule"],
-                _grid_fc_grid_module__WEBPACK_IMPORTED_MODULE_4__["FcGridModule"],
-                _fantasy_crew_grid_fantasy_crew_grid_module__WEBPACK_IMPORTED_MODULE_7__["FantasyCrewGridModule"],
-                _ngrx_effects__WEBPACK_IMPORTED_MODULE_9__["EffectsModule"].forRoot([_store_effects_fantasy_crew_effect__WEBPACK_IMPORTED_MODULE_10__["FantasyCrewEffects"]]),
-                _ngrx_store__WEBPACK_IMPORTED_MODULE_5__["StoreModule"].forRoot({
-                    character: _store_reducers_fantasy_crew_reducer__WEBPACK_IMPORTED_MODULE_6__["reducer"]
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"],
+                _grid_fc_grid_module__WEBPACK_IMPORTED_MODULE_9__["FcGridModule"],
+                _fantasy_crew_grid_fantasy_crew_grid_module__WEBPACK_IMPORTED_MODULE_8__["FantasyCrewGridModule"],
+                _ngrx_store__WEBPACK_IMPORTED_MODULE_6__["StoreModule"].forRoot({
+                    character: _store_reducers_fantasy_crew_reducer__WEBPACK_IMPORTED_MODULE_7__["reducer"]
                 })
             ],
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _header_header_component__WEBPACK_IMPORTED_MODULE_12__["AppHeader"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_5__["AppHeader"]
             ],
-            providers: [_fantasy_crew_grid_selected__WEBPACK_IMPORTED_MODULE_11__["SelectedService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -681,7 +673,7 @@ var FantasyCrewData = {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<gui-grid [columns]=\"columns\"\n\t\t  [rowColoring]=\"rowColoring\"\n\t\t  [theme]=\"theme\"\n\t\t  [source]=\"source\">\n</gui-grid>\n\n<section>\n\n\t<h4 *ngIf=\"selectedCharacter else name\">{{selectedCharacter.name}}</h4>\n\n\t<mat-form-field>\n\t\t<mat-label>Select position</mat-label>\n\t\t<mat-select (selectionChange)=\"onPositionSelection($event)\">\n\t\t\t<mat-option *ngFor=\"let position of positions\"\n\t\t\t\t\t\t[value]=\"position\">\n\t\t\t\t{{position}}\n\t\t\t</mat-option>\n\t\t</mat-select>\n\t</mat-form-field>\n\n\t<button mat-raised-button color=\"primary\"\n\t\t\t(click)=\"addCharacter(selectedPosition, selectedCharacter)\">\n\t\tAdd\n\t</button>\n\n</section>\n\n<ng-template #name>\n\t<h4>Choose one of the characters below and select position you wish to fill</h4>\n</ng-template>\n"
+module.exports = "<gui-grid [columns]=\"columns\"\n\t\t  [rowColoring]=\"rowColoring\"\n\t\t  [theme]=\"theme\"\n\t\t  [source]=\"source\"\n\t\t  (itemsSelected)=\"onItemSelected($event)\">\n</gui-grid>\n\n<section>\n\n\t<h4 *ngIf=\"selectedCharacter else name\">{{isCharacterSelected()}}</h4>\n\n\t<mat-form-field>\n\t\t<mat-label>Select position</mat-label>\n\t\t<mat-select (selectionChange)=\"onPositionSelection($event)\">\n\t\t\t<mat-option *ngFor=\"let position of positions\"\n\t\t\t\t\t\t[value]=\"position\">\n\t\t\t\t{{position}}\n\t\t\t</mat-option>\n\t\t</mat-select>\n\t</mat-form-field>\n\n\t<button mat-raised-button color=\"primary\"\n\t\t\t(click)=\"addCharacter(selectedPosition, selectedCharacter)\">\n\t\tAdd\n\t</button>\n\n\t<button mat-raised-button color=\"warn\" [disabled]=\"isButtonDisabled()\"\n\t\t\t(click)=\"removeCharacter(selectedFantasyCharacter)\">\n\t\tRemove\n\t</button>\n\n</section>\n\n<ng-template #name>\n\t<h4>Choose one of the characters below and select position you wish to fill</h4>\n</ng-template>\n"
 
 /***/ }),
 
@@ -711,10 +703,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _generic_ui_ngx_grid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @generic-ui/ngx-grid */ "./node_modules/@generic-ui/ngx-grid/dist/gui-grid.js");
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 /* harmony import */ var _data_fantasy_crew_rank__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../data/fantasy-crew-rank */ "./src/app/data/fantasy-crew-rank.ts");
-/* harmony import */ var _selected__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./selected */ "./src/app/fantasy-crew-grid/selected.ts");
-/* harmony import */ var _store_reducers_fantasy_crew_reducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../store/reducers/fantasy-crew.reducer */ "./src/app/store/reducers/fantasy-crew.reducer.ts");
-/* harmony import */ var _store_actions_fantasy_crew_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../store/actions/fantasy-crew.actions */ "./src/app/store/actions/fantasy-crew.actions.ts");
-
+/* harmony import */ var _store_reducers_fantasy_crew_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/reducers/fantasy-crew.reducer */ "./src/app/store/reducers/fantasy-crew.reducer.ts");
+/* harmony import */ var _store_actions_fantasy_crew_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../store/actions/fantasy-crew.actions */ "./src/app/store/actions/fantasy-crew.actions.ts");
 
 
 
@@ -723,9 +713,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var FantasyCrewGridComponent = /** @class */ (function () {
-    function FantasyCrewGridComponent(store, selectedService) {
+    function FantasyCrewGridComponent(store) {
         this.store = store;
-        this.selectedService = selectedService;
         this.positions = Object.values(_data_fantasy_crew_rank__WEBPACK_IMPORTED_MODULE_4__["POSITION"]).slice();
         this.columns = [
             {
@@ -741,15 +730,11 @@ var FantasyCrewGridComponent = /** @class */ (function () {
                 header: 'Species',
                 field: 'species'
             }
-            // , {
-            // 	header: 'Score',
-            // 	field: 'score'
-            // }
         ];
         this.source = [];
         this.rowColoring = _generic_ui_ngx_grid__WEBPACK_IMPORTED_MODULE_2__["GuiRowColoring"].NONE;
         this.theme = _generic_ui_ngx_grid__WEBPACK_IMPORTED_MODULE_2__["GuiTheme"].MATERIAL;
-        this.fantasyCrew = this.store.select(_store_reducers_fantasy_crew_reducer__WEBPACK_IMPORTED_MODULE_6__["selectAll"]);
+        this.fantasyCrew = this.store.select(_store_reducers_fantasy_crew_reducer__WEBPACK_IMPORTED_MODULE_5__["selectAll"]);
     }
     FantasyCrewGridComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -763,14 +748,43 @@ var FantasyCrewGridComponent = /** @class */ (function () {
     };
     FantasyCrewGridComponent.prototype.addCharacter = function (position, character) {
         if (position && character) {
-            this.selectedService.getSelected(character);
-            this.store.dispatch(new _store_actions_fantasy_crew_actions__WEBPACK_IMPORTED_MODULE_7__["AddCharacter"](position.toString(), {
+            this.validateCharacter(character);
+            this.store.dispatch(new _store_actions_fantasy_crew_actions__WEBPACK_IMPORTED_MODULE_6__["AddCharacter"](position.toString(), {
                 name: character.name,
                 rank: character.rank,
                 species: character.species,
                 score: character.score
             }));
         }
+    };
+    FantasyCrewGridComponent.prototype.removeCharacter = function (character) {
+        if (this.selectedFantasyCharacter) {
+            this.store.dispatch(new _store_actions_fantasy_crew_actions__WEBPACK_IMPORTED_MODULE_6__["RemoveCharacter"](character.id, {}));
+            this.selectedFantasyCharacter = '';
+        }
+    };
+    FantasyCrewGridComponent.prototype.validateCharacter = function (character) {
+        for (var i = 0; i < this.source.length; i++) {
+            if (this.source[i].name !== '') {
+                if (this.source[i].name === character.name) {
+                    this.source[i].name = '';
+                    this.source[i].rank = '';
+                    this.source[i].species = '';
+                    this.source[i].score = null;
+                }
+            }
+        }
+    };
+    FantasyCrewGridComponent.prototype.onItemSelected = function (character) {
+        this.selectedFantasyCharacter = character[0];
+    };
+    FantasyCrewGridComponent.prototype.isCharacterSelected = function () {
+        if (this.selectedCharacter) {
+            return this.selectedCharacter.name;
+        }
+    };
+    FantasyCrewGridComponent.prototype.isButtonDisabled = function () {
+        return !this.selectedFantasyCharacter || this.selectedFantasyCharacter.name === '';
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -783,8 +797,7 @@ var FantasyCrewGridComponent = /** @class */ (function () {
             changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ChangeDetectionStrategy"].OnPush,
             styles: [__webpack_require__(/*! ./fantasy-crew-grid.component.scss */ "./src/app/fantasy-crew-grid/fantasy-crew-grid.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"],
-            _selected__WEBPACK_IMPORTED_MODULE_5__["SelectedService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"]])
     ], FantasyCrewGridComponent);
     return FantasyCrewGridComponent;
 }());
@@ -835,46 +848,6 @@ var FantasyCrewGridModule = /** @class */ (function () {
         })
     ], FantasyCrewGridModule);
     return FantasyCrewGridModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/fantasy-crew-grid/selected.ts":
-/*!***********************************************!*\
-  !*** ./src/app/fantasy-crew-grid/selected.ts ***!
-  \***********************************************/
-/*! exports provided: SelectedService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SelectedService", function() { return SelectedService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-
-
-
-var SelectedService = /** @class */ (function () {
-    function SelectedService() {
-        this.selected$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
-    }
-    SelectedService.prototype.ngOnDestroy = function () {
-        this.selected$.next();
-        this.selected$.complete();
-    };
-    SelectedService.prototype.observeSelected = function () {
-        return this.selected$.asObservable();
-    };
-    SelectedService.prototype.getSelected = function (character) {
-        this.selected$.next(character);
-    };
-    SelectedService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
-    ], SelectedService);
-    return SelectedService;
 }());
 
 
@@ -936,13 +909,7 @@ var FcGridComponent = /** @class */ (function () {
             }, {
                 header: 'Species',
                 field: 'species'
-            }
-            // , {
-            // 	header: 'Score',
-            // 	field: 'score',
-            // 	width: 50
-            // }
-        ];
+            }];
         this.source = [];
         this.rowColoring = _generic_ui_ngx_grid__WEBPACK_IMPORTED_MODULE_2__["GuiRowColoring"].NONE;
         this.theme = _generic_ui_ngx_grid__WEBPACK_IMPORTED_MODULE_2__["GuiTheme"].MATERIAL;
@@ -1077,14 +1044,17 @@ var AppHeader = /** @class */ (function () {
 /*!*******************************************************!*\
   !*** ./src/app/store/actions/fantasy-crew.actions.ts ***!
   \*******************************************************/
-/*! exports provided: ADD_CHARACTER, AddCharacter */
+/*! exports provided: ADD_CHARACTER, REMOVE_CHARACTER, AddCharacter, RemoveCharacter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_CHARACTER", function() { return ADD_CHARACTER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_CHARACTER", function() { return REMOVE_CHARACTER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddCharacter", function() { return AddCharacter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RemoveCharacter", function() { return RemoveCharacter; });
 var ADD_CHARACTER = '[CHARACTER] ADD_CHARACTER';
+var REMOVE_CHARACTER = '[CHARACTER] REMOVE_CHARACTER';
 var AddCharacter = /** @class */ (function () {
     function AddCharacter(id, changes) {
         this.id = id;
@@ -1094,69 +1064,13 @@ var AddCharacter = /** @class */ (function () {
     return AddCharacter;
 }());
 
-
-
-/***/ }),
-
-/***/ "./src/app/store/effects/fantasy-crew.effect.ts":
-/*!******************************************************!*\
-  !*** ./src/app/store/effects/fantasy-crew.effect.ts ***!
-  \******************************************************/
-/*! exports provided: FantasyCrewEffects */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FantasyCrewEffects", function() { return FantasyCrewEffects; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-/* harmony import */ var _fantasy_crew_grid_selected__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../fantasy-crew-grid/selected */ "./src/app/fantasy-crew-grid/selected.ts");
-/* harmony import */ var _actions_fantasy_crew_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../actions/fantasy-crew.actions */ "./src/app/store/actions/fantasy-crew.actions.ts");
-/* harmony import */ var _reducers_fantasy_crew_reducer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../reducers/fantasy-crew.reducer */ "./src/app/store/reducers/fantasy-crew.reducer.ts");
-
-
-
-
-
-
-
-
-
-var FantasyCrewEffects = /** @class */ (function () {
-    function FantasyCrewEffects(actions, store, selected) {
-        var _this = this;
-        this.actions = actions;
-        this.store = store;
-        this.selected = selected;
-        this.RemoveCharacter$ = Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["createEffect"])(function () {
-            return _this.actions.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_actions_fantasy_crew_actions__WEBPACK_IMPORTED_MODULE_7__["ADD_CHARACTER"]), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["concatMap"])(function (action) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_5__["of"])(action).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["withLatestFrom"])(_this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["select"])(_reducers_fantasy_crew_reducer__WEBPACK_IMPORTED_MODULE_8__["selectAll"])))); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (_a) {
-                var action = _a[0], crew = _a[1];
-                _this.selected.observeSelected().subscribe(function (selected) {
-                    for (var i = 0; i < crew.length; i++) {
-                        if (crew[i].name !== '') {
-                            if (crew[i].name === selected.name) {
-                                crew[i].name = '';
-                                crew[i].rank = '';
-                                crew[i].species = '';
-                                crew[i].score = null;
-                            }
-                        }
-                    }
-                });
-            }));
-        }, { dispatch: false });
+var RemoveCharacter = /** @class */ (function () {
+    function RemoveCharacter(id, changes) {
+        this.id = id;
+        this.changes = changes;
+        this.type = REMOVE_CHARACTER;
     }
-    FantasyCrewEffects = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Actions"],
-            _ngrx_store__WEBPACK_IMPORTED_MODULE_4__["Store"],
-            _fantasy_crew_grid_selected__WEBPACK_IMPORTED_MODULE_6__["SelectedService"]])
-    ], FantasyCrewEffects);
-    return FantasyCrewEffects;
+    return RemoveCharacter;
 }());
 
 
@@ -1181,6 +1095,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
 /* harmony import */ var _ngrx_entity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/entity */ "./node_modules/@ngrx/entity/fesm5/entity.js");
 /* harmony import */ var _data_fantasy_crew_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../data/fantasy-crew.data */ "./src/app/data/fantasy-crew.data.ts");
+/* harmony import */ var _actions_fantasy_crew_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../actions/fantasy-crew.actions */ "./src/app/store/actions/fantasy-crew.actions.ts");
+
 
 
 
@@ -1189,10 +1105,27 @@ var initialState = characterAdapter.getInitialState(_data_fantasy_crew_data__WEB
 var crew = _data_fantasy_crew_data__WEBPACK_IMPORTED_MODULE_2__["FantasyCrewData"];
 function reducer(state, action) {
     if (state === void 0) { state = initialState; }
-    return characterAdapter.updateOne({
-        id: action.id,
-        changes: action.changes
-    }, state);
+    switch (action.type) {
+        case _actions_fantasy_crew_actions__WEBPACK_IMPORTED_MODULE_3__["ADD_CHARACTER"]: {
+            return characterAdapter.updateOne({
+                id: action.id,
+                changes: action.changes
+            }, state);
+        }
+        case _actions_fantasy_crew_actions__WEBPACK_IMPORTED_MODULE_3__["REMOVE_CHARACTER"]: {
+            return characterAdapter.updateOne({
+                id: action.id,
+                changes: action.changes = {
+                    name: '',
+                    rank: '',
+                    species: '',
+                    score: null
+                }
+            }, state);
+        }
+        default:
+            return state;
+    }
 }
 var getCharacterState = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createFeatureSelector"])('character');
 var selectAll = characterAdapter.getSelectors(getCharacterState).selectAll;
