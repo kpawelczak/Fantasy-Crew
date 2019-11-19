@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 
 import { GuiColumn, GuiDataType, GuiRowColoring, GuiTheme } from '@generic-ui/ngx-grid';
 
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 import { FantasyCrewCharacter } from '../store/models/fantasy-crew-character.model';
 import { POSITION } from '../data/fantasy-crew-rank';
@@ -20,7 +20,7 @@ import { FantasyCrewRoster } from '../data/database';
 	styleUrls: ['./fantasy-crew-grid.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FantasyCrewGridComponent implements OnInit, OnChanges {
+export class FantasyCrewGridComponent implements OnInit, OnChanges, OnDestroy {
 
 	@Input()
 	selectedCharacter: FantasyCrewCharacter;
@@ -38,6 +38,8 @@ export class FantasyCrewGridComponent implements OnInit, OnChanges {
 	characterNameControl = new FormControl();
 
 	characterNameList: Array<string> = [];
+
+	fantasyCrewSubscription: Subscription;
 
 	columns: Array<GuiColumn> = [
 		{
@@ -97,16 +99,20 @@ export class FantasyCrewGridComponent implements OnInit, OnChanges {
 	ngOnInit() {
 		this.getCharacterNames();
 
-		this.fantasyCrew
-			.subscribe((characters: any) => {
-				this.source = characters;
-			});
+		this.fantasyCrewSubscription = this.fantasyCrew
+										   .subscribe((characters: any) => {
+											   this.source = characters;
+										   });
 
 		this.filteredCharacters = this.characterNameControl.valueChanges
 									  .pipe(
 										  startWith(''),
 										  map(value => this.filterCharacterNames(value))
 									  );
+	}
+
+	ngOnDestroy() {
+		this.fantasyCrewSubscription.unsubscribe();
 	}
 
 
@@ -190,10 +196,10 @@ export class FantasyCrewGridComponent implements OnInit, OnChanges {
 	}
 
 	private calculateScore(score: number): number {
-		if (this.selectedCharacter.name === 'Data' &&
+		if (this.selectedCharacter.name === 'Data' && (
 			this.selectedPosition === POSITION.First ||
 			this.selectedPosition === POSITION.Science ||
-			this.selectedPosition === POSITION.Engineering) {
+			this.selectedPosition === POSITION.Engineering)) {
 			return 9.5;
 		} else if (this.selectedCharacter.position !== this.selectedPosition) {
 			score -= 2;
