@@ -190,7 +190,10 @@ export class FantasyCrewGridComponent implements OnInit, OnChanges {
 	}
 
 	private calculateScore(score: number): number {
-		if (this.selectedCharacter.name === 'Data' && this.selectedPosition === (POSITION.First || POSITION.Science || POSITION.Engineering)) {
+		if (this.selectedCharacter.name === 'Data' &&
+			this.selectedPosition === POSITION.First ||
+			this.selectedPosition === POSITION.Science ||
+			this.selectedPosition === POSITION.Engineering) {
 			return 9.5;
 		} else if (this.selectedCharacter.position !== this.selectedPosition) {
 			score -= 2;
@@ -200,8 +203,8 @@ export class FantasyCrewGridComponent implements OnInit, OnChanges {
 			} else {
 				return score;
 			}
-		} else  {
-			return score
+		} else {
+			return score;
 		}
 	}
 
