@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
-import { GuiColumn, GuiRowColoring, GuiTheme } from '@generic-ui/ngx-grid';
+import { GuiColumn, GuiDataType, GuiRowColoring, GuiTheme } from '@generic-ui/ngx-grid';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -33,16 +33,20 @@ export class FantasyCrewGridComponent implements OnInit {
 	columns: Array<GuiColumn> = [
 		{
 			header: 'Position',
-			field: 'id'
+			field: 'id',
+			type: GuiDataType.STRING
 		}, {
 			header: 'Name',
-			field: 'name'
+			field: 'name',
+			type: GuiDataType.STRING
 		}, {
 			header: 'Rank',
-			field: 'rank'
+			field: 'rank',
+			type: GuiDataType.STRING
 		}, {
 			header: 'Species',
-			field: 'species'
+			field: 'species',
+			type: GuiDataType.STRING
 		}];
 
 	source: Array<any> = [];
