@@ -2,26 +2,29 @@ $blue: #3f51b5;
 $white: #fcfcfc;
 
 .app-header {
+	display: flex;
+	justify-content: space-between;
 	background: $blue;
-	padding: 4px;
+	padding: 12px;
 	text-align: center;
 	font-family: Roboto, "Helvetica Neue", sans-serif;
 	color: $white;
-	box-shadow: 0 2px 4px lighten($blue, 20)
-}
+	box-shadow: 0 2px 4px lighten($blue, 20);
 
-a {
-	color: $white;
-	font-size: 16px;
-	padding: 2px;
-	text-decoration: none;
-	text-transform: capitalize;
+	a {
+		align-self: center;
+		color: $white;
+		font-size: 16px;
+		padding: 2px;
+		text-decoration: none;
+		text-transform: capitalize;
 
-	&:hover {
-		color: darken($white, 30);
+		&:hover {
+			color: darken($white, 30);
+		}
 	}
-}
 
-h2 {
-	margin: 0;
+	h3 {
+		margin: 0;
+	}
 }
