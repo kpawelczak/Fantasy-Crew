@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { GridModule } from '@generic-ui/ngx-grid';
-import { FcGridComponent } from './fc-grid.component';
+import { CharactersListGridComponent } from './characters-list-grid.component';
 
 
 @NgModule({
@@ -11,11 +11,11 @@ import { FcGridComponent } from './fc-grid.component';
 		GridModule
 	],
 	declarations: [
-		FcGridComponent
+		CharactersListGridComponent
 	],
 	exports: [
-		FcGridComponent
+		CharactersListGridComponent
 	]
 })
-export class FcGridModule {
+export class CharactersListGridModule {
 }

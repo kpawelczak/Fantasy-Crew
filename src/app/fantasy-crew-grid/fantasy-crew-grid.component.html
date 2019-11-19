@@ -1,36 +1,45 @@
-<gui-grid [columns]="columns"
-		  [rowColoring]="rowColoring"
-		  [theme]="theme"
-		  [source]="source"
-		  (itemsSelected)="onItemSelected($event)">
-</gui-grid>
+<div class="fantasy-crew-grid">
+	<gui-grid [columns]="columns"
+			  [rowColoring]="rowColoring"
+			  [theme]="theme"
+			  [source]="source"
+			  (itemsSelected)="onItemSelected($event)">
+	</gui-grid>
 
-<section>
+	<section>
 
-	<h4 *ngIf="selectedCharacter else name">{{isCharacterSelected()}}</h4>
+		<form>
+			<mat-form-field class="fantasy-crew-character-name">
+				<input matInput type="text" placeholder="Name" aria-label="Number"
+					   [formControl]="characterNameControl"
+					   [matAutocomplete]="auto"
+					   [value]="isCharacterSelected()">
+				<mat-autocomplete #auto="matAutocomplete" (optionSelected)='characterSelected($event.option.value)'>
+					<mat-option *ngFor="let character of filteredCharacters | async" [value]="character">
+						{{character }}
+					</mat-option>
+				</mat-autocomplete>
+			</mat-form-field>
 
-	<mat-form-field>
-		<mat-label>Select position</mat-label>
-		<mat-select (selectionChange)="onPositionSelection($event)">
-			<mat-option *ngFor="let position of positions"
-						[value]="position">
-				{{position}}
-			</mat-option>
-		</mat-select>
-	</mat-form-field>
+			<mat-form-field>
+				<mat-label>Position</mat-label>
+				<mat-select (selectionChange)="onPositionSelection($event)">
+					<mat-option *ngFor="let position of positions"
+								[value]="position">
+						{{position}}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
 
-	<button mat-raised-button color="primary"
-			(click)="addCharacter(selectedPosition, selectedCharacter)">
-		Add
-	</button>
+			<button mat-raised-button color="primary"
+					(click)="addCharacter(selectedPosition, selectedCharacter)">
+				Add
+			</button>
 
-	<button mat-raised-button color="warn" [disabled]="isButtonDisabled()"
-			(click)="removeCharacter(selectedFantasyCharacter)">
-		Remove
-	</button>
-
-</section>
-
-<ng-template #name>
-	<h4>Choose one of the characters below and select position you wish to fill</h4>
-</ng-template>
+			<button mat-raised-button color="warn" [disabled]="isButtonDisabled()"
+					(click)="removeCharacter(selectedFantasyCharacter)">
+				Remove
+			</button>
+		</form>
+	</section>
+</div>

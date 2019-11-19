@@ -1,6 +1,18 @@
-.gui-grid {
-	margin: 32px 0;
+.fantasy-crew-grid {
+
+	.gui-grid {
+		padding-top: 20px;
+		margin: 32px 0;
+	}
+
+	.mat-raised-button {
+		margin-left: 12px;
+	}
+
+	.fantasy-crew-character-name {
+		margin-right: 12px;
+	}
+
+
 }
-.mat-raised-button{
-	margin-left: 12px;
-}
+

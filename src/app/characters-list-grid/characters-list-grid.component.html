@@ -1,0 +1,11 @@
+<div class="characters-list-grid">
+	<gui-grid [columns]="columns"
+			  [source]="source"
+			  [height]="350"
+			  [rowColoring]="rowColoring"
+			  [sorting]="true"
+			  [theme]="theme"
+			  [summaryPanel]="true"
+			  (itemsSelected)="onItemSelected($event)">
+	</gui-grid>
+</div>

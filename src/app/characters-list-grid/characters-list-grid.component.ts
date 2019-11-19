@@ -4,13 +4,13 @@ import { FantasyCrewRoster } from '../data/database';
 import { FantasyCrewCharacter } from '../store/models/fantasy-crew-character.model';
 
 @Component({
-	selector: 'fc-grid',
-	templateUrl: './fc-grid.component.html',
-	styleUrls: ['./fc-grid.component.scss'],
+	selector: 'characters-list-grid',
+	templateUrl: './characters-list-grid.component.html',
+	styleUrls: ['./characters-list-grid.component.scss'],
 
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FcGridComponent implements OnInit {
+export class CharactersListGridComponent implements OnInit {
 
 	@Output()
 	onCharacterSelection = new EventEmitter();
@@ -44,6 +44,9 @@ export class FcGridComponent implements OnInit {
 	}
 
 	onItemSelected(character: Array<FantasyCrewCharacter>) {
+		if (!character[0]) {
+			return;
+		}
 		this.onCharacterSelection.emit(character[0]);
 	}
 

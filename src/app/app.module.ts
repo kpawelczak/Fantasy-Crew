@@ -9,14 +9,14 @@ import { StoreModule } from '@ngrx/store';
 import { reducer } from './store/reducers/fantasy-crew.reducer';
 
 import { FantasyCrewGridModule } from './fantasy-crew-grid/fantasy-crew-grid.module';
-import { FcGridModule } from './grid/fc-grid.module';
+import { CharactersListGridModule } from './characters-list-grid/characters-list-grid.module';
 
 
 @NgModule({
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
-		FcGridModule,
+		CharactersListGridModule,
 		FantasyCrewGridModule,
 		StoreModule.forRoot({
 			character: reducer
