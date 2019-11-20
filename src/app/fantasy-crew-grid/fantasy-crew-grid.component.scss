@@ -1,18 +1,32 @@
 .fantasy-crew-grid {
+	display: flex;
+	padding-top: 20px;
+	margin: 12px 0 24px 0 ;
 
 	.gui-grid {
-		padding-top: 20px;
-		margin: 24px 0;
+		margin-top: 24px;
+	}
+
+	.crew-grid {
+		display: flex;
+		flex-direction: column;
+
+		h3 {
+			margin: 0 auto;
+			font-style: italic;
+		}
+	}
+
+	.crew-form {
+		margin-top: 50px;
+		p {
+			font-size: 15px;
+		}
 	}
 
 	.mat-raised-button {
-		margin-left: 12px;
+		margin: 6px 12px 0 0;
 	}
-
-	.fantasy-crew-character-name {
-		margin-right: 12px;
-	}
-
 
 }
 
