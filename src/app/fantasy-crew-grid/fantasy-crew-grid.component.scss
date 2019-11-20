@@ -10,6 +10,7 @@
 	.crew-grid {
 		display: flex;
 		flex-direction: column;
+		padding: 0;
 
 		h3 {
 			margin: 0 auto;
@@ -18,6 +19,7 @@
 	}
 
 	.crew-form {
+		padding-left: 36px;
 		margin-top: 50px;
 		p {
 			font-size: 15px;
