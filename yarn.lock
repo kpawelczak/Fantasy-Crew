@@ -306,6 +306,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@generic-ui/grid@^0.0.1-alpha.6":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@generic-ui/grid/-/grid-0.0.1.tgz#d6329ee629959325718fb8427484b5f03d4c9273"
+  integrity sha512-Zo0HGqZB4QJBl0LXzVq/77sIQ/f0ICwowYhIH0TaB2bR/ACpyazdwHCZ1JyaeScaYnO8IZhXS2cHcU5tuQJjeA==
+
 "@generic-ui/ngx-grid@^0.4.4":
   version "0.4.5"
   resolved "https://registry.yarnpkg.com/@generic-ui/ngx-grid/-/ngx-grid-0.4.5.tgz#92c917b602c0825d7d582af3d0e2764cb0aa9763"
@@ -605,9 +610,9 @@ acorn-dynamic-import@^3.0.0:
     acorn "^5.0.0"
 
 acorn@^5.0.0, acorn@^5.6.2:
-  version "5.7.3"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.3.tgz#67aa231bf8812974b85235a96771eb6bd07ea279"
-  integrity sha512-T/zvzYRfbVojPWahDsE5evJdHb3oJoQfFbsrKM7w5Zcs++Tr257tia3BmMP8XYVjp1S9RZXQMh7gao96BlqZOw==
+  version "5.7.4"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.4.tgz#3e8d8a9947d0599a1796d10225d7432f4a4acf5e"
+  integrity sha512-1D++VG7BhrtvQpNbBzovKNc1FLGGEE/oGe7b9xJm/RFHMBeUaUGpluV9RLjZa47YFdPcDAenEYuq9pQPcMdLJg==
 
 adm-zip@^0.4.9:
   version "0.4.13"
