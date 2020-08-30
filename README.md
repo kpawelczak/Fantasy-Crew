@@ -1,3 +1,3 @@
 Angular & NgRx
 
-link: [Fantasyn crew](https://kpawelczak.github.io/Fantasy-Crew/)
+link: [Fantasy crew](https://kpawelczak.github.io/Fantasy-Crew/)
